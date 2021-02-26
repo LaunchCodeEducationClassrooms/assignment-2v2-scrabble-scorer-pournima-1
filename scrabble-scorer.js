@@ -131,16 +131,12 @@ const scoringAlgorithms = [
 {
   name: 'Bonus Vowels',
   description: 'Vowels are 3 pts, consonants are 1 pt.',
-  scoringFunction: function() {
-    return vowelBonusScore(word1);
-  }
+  scoringFunction: function(){return vowelBonusScore(word1);}
 },
 {
   name: 'Scrabble',
   description: 'The traditional scoring algorithm.',
-  scoringFunction: function() {
-    return newScrabbleScorer(word1);
-  }
+  scoringFunction: function(){return newScrabbleScorer(word1);}
 }
 ];
 
