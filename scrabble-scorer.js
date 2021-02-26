@@ -98,14 +98,14 @@ let scrabbleScore= function(word1){
 let simpleScoreObject = {
   name: 'Simple Score',
   description: 'Each letter is worth 1 point.',
-  scorerFunction: function(){return simpleScore(word1);}
+  scoringFunction: function(){return simpleScore(word1);}
 };
 
 
 let vowelBonusScoreObject  = {
   name: 'Bonus Vowels',
   description: 'Vowels are 3 pts, consonants are 1 pt.',
-  scorerFunction: function() {
+  scoringFunction: function() {
     return vowelBonusScore(word1);
   }
 };
@@ -113,7 +113,7 @@ let vowelBonusScoreObject  = {
 let scrabbleScoreObject = {
   name: 'Scrabble',
   description: 'The traditional scoring algorithm.',
-  scorerFunction: function() {
+  scoringFunction: function() {
     return newScrabbleScorer(word1);
 
   }
@@ -126,15 +126,15 @@ function scorerPrompt() {
 
  if(userAlgoNum === "0")
  {
-   return scoringAlgorithms[0].scorerFunction();
+   return scoringAlgorithms[0].scoringFunction();
  }
  else if(userAlgoNum === "1")
  {
-   return scoringAlgorithms[1].scorerFunction();
+   return scoringAlgorithms[1].scoringFunction();
  }
  else
  {
-   return scoringAlgorithms[2].scorerFunction();
+   return scoringAlgorithms[2].scoringFunction();
  }
 }
 
