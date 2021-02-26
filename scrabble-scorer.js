@@ -92,7 +92,7 @@ let vowelBonusScore= function(word1){
   return vowelBonusScoreCalc(word1);
 }
 let scrabbleScore= function(word1){
-  return newScrabbleScorer(word1);
+  return oldScrabbleScorer(word1);
 }
 
 /*
@@ -136,7 +136,7 @@ const scoringAlgorithms = [
 {
   name: 'Scrabble',
   description: 'The traditional scoring algorithm.',
-  scoringFunction: function(){return oldScrabbleScorer(word1);}
+  scoringFunction: function(){return scrabbleScore(word1);}
 }
 ];
 
