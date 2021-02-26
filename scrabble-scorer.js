@@ -126,17 +126,17 @@ const scoringAlgorithms = [
   {
   name: 'Simple Score',
   description: 'Each letter is worth 1 point.',
-  scoringFunction: function(){return simpleScore(word1);}
+  scorerFunction: function(){return simpleScore(word1);}
 },
 {
   name: 'Bonus Vowels',
   description: 'Vowels are 3 pts, consonants are 1 pt.',
-  scoringFunction: function(){return vowelBonusScore(word1);}
+  scorerFunction: function(){return vowelBonusScore(word1);}
 },
 {
   name: 'Scrabble',
   description: 'The traditional scoring algorithm.',
-  scoringFunction: function(){return oldScrabbleScorer(word1);}
+  scorerFunction: function(){return oldScrabbleScorer(word1);}
 }
 ];
 
@@ -145,15 +145,15 @@ function scorerPrompt() {
 
  if(userAlgoNum === "0")
  {
-   return scoringAlgorithms[0].scoringFunction();
+   return scoringAlgorithms[0].scorerFunction();
  }
  else if(userAlgoNum === "1")
  {
-   return scoringAlgorithms[1].scoringFunction();
+   return scoringAlgorithms[1].scorerFunction();
  }
  else
  {
-   return scoringAlgorithms[2].scoringFunction();
+   return scoringAlgorithms[2].scorerFunction();
  }
 }
 
