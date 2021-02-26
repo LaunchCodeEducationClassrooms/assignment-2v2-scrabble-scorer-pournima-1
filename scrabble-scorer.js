@@ -123,21 +123,24 @@ let scrabbleScoreObject = {
 const scoringAlgorithms = [simpleScoreObject,vowelBonusScoreObject,scrabbleScoreObject];*/
 
 const scoringAlgorithms = [
+  Object(
   {
   name: 'Simple Score',
   description: 'Each letter is worth 1 point.',
   scoringFunction: function(){return simpleScore(word1);}
-},
+}),
+Object(
 {
   name: 'Bonus Vowels',
   description: 'Vowels are 3 pts, consonants are 1 pt.',
   scoringFunction: function(){return vowelBonusScore(word1);}
-},
+}),
+Object(
 {
   name: 'Scrabble',
   description: 'The traditional scoring algorithm.',
   scoringFunction: function(){return scrabbleScore(word1);}
-}
+})
 ];
 
 function scorerPrompt() {
