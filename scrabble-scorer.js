@@ -136,7 +136,7 @@ const scoringAlgorithms = [
 {
   name: 'Scrabble',
   description: 'The traditional scoring algorithm.',
-  scoringFunction: function(){return newScrabbleScorer(word1);}
+  scoringFunction: function(){return oldScrabbleScorer(word1);}
 }
 ];
 
