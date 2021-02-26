@@ -96,23 +96,23 @@ let scrabbleScore= function(word1){
 }
 
 let simpleScoreObject = {
-  name: "Simple Score",
-  description: "Each letter is worth 1 point.",
+  name: 'Simple Score',
+  description: 'Each letter is worth 1 point.',
   scorerFunction: function(){return simpleScore(word1);}
 };
 
 
 let vowelBonusScoreObject  = {
-  name: "Bonus Vowels",
-  description: "Vowels are 3 pts, consonants are 1 pt.",
+  name: 'Bonus Vowels',
+  description: 'Vowels are 3 pts, consonants are 1 pt.',
   scorerFunction: function() {
     return vowelBonusScore(word1);
   }
 };
 
 let scrabbleScoreObject = {
-  name: "Scrabble",
-  description: "The traditional scoring algorithm.",
+  name: 'Scrabble',
+  description: 'The traditional scoring algorithm.',
   scorerFunction: function() {
     return newScrabbleScorer(word1);
 
