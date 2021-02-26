@@ -76,19 +76,25 @@ function initialPrompt() {
 let simpleScore = {
   name: "Scrabble",
   description: "Each letter is worth 1 point.",
-  scorerFunction: function() {return simpleScoreCalc(word1);}
+  scorerFunction: function() {
+    return simpleScoreCalc(word1);
+  }
 };
 
 let vowelBonusScore  = {
   name: "Bonus Vowels",
   description: "Vowels are 3 pts, consonants are 1 pt.",
-  scorerFunction: function() {return vowelBonusScoreCalc(word1);}
+  scorerFunction: function() {
+    return vowelBonusScoreCalc(word1);
+  }
 };
 
 let scrabbleScore = {
   name: "Scrabble",
   description: "The traditional scoring algorithm.",
-  scorerFunction: function() {return newScrabbleScorer(word1);}
+  scorerFunction: function() {
+    return newScrabbleScorer(word1);
+  }
 };
 
 const scoringAlgorithms = [simpleScore,vowelBonusScore,scrabbleScore];
