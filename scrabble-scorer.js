@@ -96,7 +96,7 @@ let scrabbleScore= function(word1){
 }
 
 let simpleScoreObject = {
-  name: "Scrabble",
+  name: "Simple Score",
   description: "Each letter is worth 1 point.",
   scorerFunction: function(){return simpleScore(word1);}
 };
