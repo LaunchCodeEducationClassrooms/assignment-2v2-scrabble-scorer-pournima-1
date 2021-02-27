@@ -72,7 +72,54 @@ let word1;
 function initialPrompt() {
   console.log("Let's play some scrabble!");
   word1 = input.question('\n'+"Enter a word to score:");
+
+  /*while (!isValidWord(word1)) {
+      let prompt = "Enter a word to score:";
+      //console.log(prompt);
+      word1 = input.question(prompt);
+  }*/
+
 };
+
+let isValidAlgorithm = function(inputAlgorithm)
+{
+  if((inputAlgorithm === "0") || (inputAlgorithm === "1") || (inputAlgorithm === "2"))
+  {
+    return true;
+  }
+  else
+  {
+    return false;
+  }
+}
+
+let isValidWord = function(inputWord)
+{
+  inputWord = inputWord.toUpperCase();
+let letters =['A','B','C','D','E','F','G','H','I',
+'J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X',
+'Y','Z'];
+let boolValue;
+for(i=0;i<inputWord.length;i++)
+{
+if(letters.includes(inputWord[i]))
+  {
+  }
+  else
+  {
+    boolValue="false";
+  }
+}
+
+if(boolValue !="false")
+{
+return true;
+}
+else
+{
+  return false;
+}
+}
 
 /*let simpleScore = {
   name: "Scrabble",
@@ -143,6 +190,13 @@ const scoringAlgorithms = [
 function scorerPrompt() {
  let userAlgoNum = input.question("Which scoring algorithm would you like to use?\n\n0 - Simple: One point per character\n1 - Vowel Bonus: Vowels are worth 3 points\n2 - Scrabble: Uses scrabble point system\nEnter 0, 1, or 2:");
 
+
+    while (!isValidAlgorithm(userAlgoNum)) {
+      let prompt = "Enter 0, 1, or 2:";
+      //console.log(prompt);
+      userAlgoNum = input.question(prompt);
+    }
+
  if(userAlgoNum === "0")
  {
    return scoringAlgorithms[0].scoringFunction(word1);
@@ -167,6 +221,7 @@ function transform(oldPointStructure) {
       newPointStructureValues[lowerCaseLetters] = Number(item)
     }
   }
+  newPointStructureValues[' '] = 0;
   return newPointStructureValues;
 };
 
