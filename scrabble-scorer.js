@@ -15,7 +15,7 @@ const oldPointStructure = {
 
 let newPointStructure = transform(oldPointStructure);
 
-
+//const input = require("readline-sync");
 function oldScrabbleScorer(word) {
 	word = word.toUpperCase();
 	//let letterPoints = "";
@@ -123,24 +123,21 @@ let scrabbleScoreObject = {
 const scoringAlgorithms = [simpleScoreObject,vowelBonusScoreObject,scrabbleScoreObject];*/
 
 const scoringAlgorithms = [
-  Object(
   {
-  name: 'Simple Score',
-  description: 'Each letter is worth 1 point.',
-  scoringFunction: function(){return simpleScore(word1);}
-}),
-Object(
+  'name': 'Simple Score',
+  'description': 'Each letter is worth 1 point.',
+  'scoringFunction': simpleScore
+  },
 {
-  name: 'Bonus Vowels',
-  description: 'Vowels are 3 pts, consonants are 1 pt.',
-  scoringFunction: function(){return vowelBonusScore(word1);}
-}),
-Object(
+  'name': 'Bonus Vowels',
+  'description': 'Vowels are 3 pts, consonants are 1 pt.',
+  'scoringFunction': vowelBonusScore
+},
 {
-  name: 'Scrabble',
-  description: 'The traditional scoring algorithm.',
-  scoringFunction: function(){return scrabbleScore(word1);}
-})
+  'name': 'Scrabble',
+  'description': 'The traditional scoring algorithm.',
+  'scoringFunction': scrabbleScore
+}
 ];
 
 function scorerPrompt() {
@@ -148,15 +145,15 @@ function scorerPrompt() {
 
  if(userAlgoNum === "0")
  {
-   return scoringAlgorithms[0].scoringFunction();
+   return scoringAlgorithms[0].scoringFunction(word1);
  }
  else if(userAlgoNum === "1")
  {
-   return scoringAlgorithms[1].scoringFunction();
+   return scoringAlgorithms[1].scoringFunction(word1);
  }
  else
  {
-   return scoringAlgorithms[2].scoringFunction();
+   return scoringAlgorithms[2].scoringFunction(word1);
  }
 }
 
